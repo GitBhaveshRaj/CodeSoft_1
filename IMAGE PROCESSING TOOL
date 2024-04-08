@@ -1,0 +1,25 @@
+#include <opencv2/opencv.hpp>
+#include <iostream>
+
+using namespace cv;
+using namespace std;
+
+int main() {
+    // Load the image
+    Mat image = imread("image.jpg");
+
+    // Check if the image was loaded successfully
+    if (image.empty()) {
+        cout << "Could not load the image" << endl;
+        return -1;
+    }
+
+    // Display the image
+    namedWindow("Image", WINDOW_AUTOSIZE);
+    imshow("Image", image);
+
+    // Wait for a key press
+    waitKey(0);
+
+    return 0;
+}
