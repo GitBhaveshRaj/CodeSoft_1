@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main() {
+    srand(time(0));
+    int randomNumber = rand() % 1000 + 1;
+    int guess;
+    bool correctGuess = false;
+    cout << "Guess the random number (between 1 and 1000): ";
+    while (!correctGuess) {
+        cin >> guess;
+        if (guess == randomNumber) {
+            cout << "Congratulations! You guessed the correct number." << endl;
+            correctGuess = true;
+        } else if (guess < randomNumber) {
+            cout << "Too low. Guess again: ";
+        } else {
+            cout << "Too high. Guess again: ";
+        }
+    }
+    return 0;
+}
